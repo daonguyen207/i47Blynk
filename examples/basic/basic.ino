@@ -25,6 +25,8 @@ void setup()
  i47Blynk_begin("i47NLulK4JZTVX5"); //nhập token vào đây
  i47Blynk_callback(BLYNK_V0,[](String data){
   Serial.println(data);
+  if(data=="0")digitalWrite(2,1);
+  else digitalWrite(2,0);
  });
  i47Blynk_callback(BLYNK_V1,[](String data){
   Serial.println(data);
@@ -38,6 +40,6 @@ void loop()
  if(millis() - tSent > 1000)
  {
    tSent = millis();
-   i47Blynk_write(BLYNK_V0,millis());
+   i47Blynk_write(BLYNK_V2,millis());
  }
 }
