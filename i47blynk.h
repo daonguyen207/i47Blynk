@@ -58,6 +58,8 @@ PubSubClient client(espClient);
                 String topic_virtual = String(blynk_token) + "deviceRX_V" + String(i/10) + String(i%10);
                 client.subscribe(topic_virtual.c_str()); //đăng kí nhận dữ liệu từ topic ESP_doan_dieukhien
               }
+              String topic_virtual = String(blynk_token) + "deviceRX_V99";
+              client.subscribe(topic_virtual.c_str()); 
             }
             else 
             {
