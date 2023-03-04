@@ -37,7 +37,8 @@ PubSubClient client(espClient);
         String dat = "";
         for (int i = 0; i < length; i++)dat+= (char)payload[i];   
         int virtual_pin = (topic[25]-48)*10 + (topic[26]-48);
-        if( list_callback[virtual_pin] != 0)list_callback[virtual_pin](dat);
+        if(virtual_pin==99)client.publish(blynk_token.c_str(),"online"); //gửi tin nhắn báo device đã online
+        else if( list_callback[virtual_pin] != 0)list_callback[virtual_pin](dat);
      }
      static void reconnect() // Hàm reconnect thực hiện kết nối lại khi mất kết nối với MQTT Broker
      {
