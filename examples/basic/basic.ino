@@ -22,7 +22,7 @@ void setup()
  Serial.println("Da ket noi WiFi");
  Serial.println(WiFi.localIP());
 
- i47Blynk_begin("iot47alo1234539"); //nhập token vào đây
+ i47Blynk_begin("i47NLulK4JZTVX5"); //nhập token vào đây
  i47Blynk_callback(BLYNK_V0,[](String data){
   Serial.println(data);
  });
